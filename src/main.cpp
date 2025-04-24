@@ -42,7 +42,7 @@ int main()
     glewExperimental = GL_TRUE;
 
     GLenum initStatus = glewInit();
-    if(initStatus != GLEW_OK)
+    if(GLEW_OK != initStatus && initStatus != GLEW_ERROR_NO_GLX_DISPLAY)
     {
         printf("GLEW initiaisation failed! GLEW exit code %d\n What went wrong:\n %s\n", initStatus, glewGetErrorString(initStatus));
         glfwDestroyWindow(mainWindow);
